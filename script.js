@@ -141,20 +141,83 @@
 //     }
 // ]
 
-//
-// let soundClips = [
-//     {
-//         'title': '1',
-//         'src': 'assets/sounds/'
-//     },
-//     {
-//         'title': '2',
-//         'src': 'assets/sounds/'
-//     }
-// ]
-//
-//
+const soundClips = [
+    {
+        title: "80 million people",
+        src: "assets/sounds/80-million-people.mp3"
+    },
+    {
+        title: "Are you sure",
+        src: "assets/sounds/Are-you-sure.mp3"
+    }
+];
+
+
+
 // let outputButtons = document.querySelector('#button-container').innerHTML
+
 // soundClips.forEach((clip) => {
-//     outputButtons += '<p>' + clip + '</p>';
+//     document.querySelector('#button-container').innerHTML += '<div class="button" data-src="' + clip.src + '">' + clip.title + '</div>';
 // })
+
+soundClips.forEach((clip) => {
+    document.querySelector('#button-container').innerHTML += '<div id="' + clip.title + '" class="button" data-src="' + clip.src + '">' + clip.title + '</div>';
+})
+
+let buttonElements = document.querySelectorAll('.button');
+
+buttonElements.forEach((title)=>{
+    title.addEventListener('click', ()=>{
+        // alert(title.getAttribute('data-src'))
+        let audioPath = title.getAttribute('data-src')
+
+        console.log(audioPath)
+        playAudio(audioPath)
+        // console.log(playAudio)
+
+    })
+});
+
+function playAudio(audioPath) {
+    document.querySelector('#audiobar-container').innerHTML =
+        '<audio src="' + audioPath +  '" </audio>';
+    return document.querySelector('audio').play();
+}
+
+// function playAudio(audioPath) {
+//     // '<audio controls src="' + audioPath + '"></audio>'
+//
+//     return document.querySelector('#audiobar-container').innerHTML =
+//         '<audio controls src="' + audioPath +  '" </audio>'
+//     document.querySelector('audio').play()
+//
+// }
+
+// type="audio/mpeg
+
+// <audio
+//     controls
+//     src="/media/cc0-audio/t-rex-roar.mp3">
+// </audio>
+
+// <audio id="myAudio">
+//
+//     <source src="horse.ogg" type="audio/ogg">
+//         <source src="horse.mp3" type="audio/mpeg">
+//             Your browser does not support the audio element.
+// </audio>
+//
+
+
+// FOR IN LOOP
+// // const  = { a: 1, b: 2, c: 3 };
+//
+// for (const property in object) {
+//     console.log(`${property}: ${object[property]}`);
+// }
+
+// expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+
