@@ -1,15 +1,15 @@
-
-html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+* {
+    box-sizing: border-box;
 }
+
 body {
-    width: 100%;
-    height: 100%;
+    padding: 0;
+    margin: 0;
+    max-width: 100vw;
     display: block;
     background: #237530;
-    overflow: hidden;
+    font-family: "Digital-7 Mono";
+    font-size: 22px;
 }
 
 h1 {
@@ -20,14 +20,52 @@ h1 {
     padding: 0.7em;
 }
 
-.top-banner {
+#button-container {
+    margin: 50px 50px 220px 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border: 5px solid #000000;
+    background-color: #ffffff;
+    border-radius: 10px;
+    /*width: 150px;*/
+    text-align: center;
+
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.banner-header {
     width: 100vw;
     margin-top: 50px;
 }
 
-.bottom-left {
-    width: 40vw;
+.moss {
+    margin-top: 10px;
+    width: 400px;
     position: fixed;
     bottom: 0px;
     left: 0px;
+}
+
+footer p{
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    max-width: 230px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 5px solid #000000;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    z-index: -1;
 }
