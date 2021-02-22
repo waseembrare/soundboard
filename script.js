@@ -131,7 +131,7 @@ const soundClips = [
     },
     {
         title: "not afraid",
-        src: "assets/sounds/pull-down-my-trousers.mp3",
+        src: "assets/sounds/not-afraid.mp3",
         keystroke: "j"
     },
     {
