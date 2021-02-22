@@ -191,7 +191,7 @@ const soundClips = [
 
 soundClips.forEach((clip) => {
     // outputButtons.innerHTML += '<div id="' + clip.title + '" class="button" data-src="' + clip.src + '">' + clip.title + '</div>';
-    document.querySelector('#button-container').innerHTML += '<div id="' + clip.title + '" class="button" data-src="' + clip.src + '" data-key="' + clip.keystroke + '">' + clip.title + ' (' + clip.keystroke + ')</div>';
+    document.querySelector('#button-container').innerHTML += '<div id="' + clip.title + '" class="button" data-src="' + clip.src + '" data-key="' + clip.keystroke + '">' + clip.title + ' - <span class="keystroke">' + clip.keystroke + '</span></div>';
 
 })
 
