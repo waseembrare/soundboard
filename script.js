@@ -169,37 +169,17 @@ const soundClips = [
         src: "assets/sounds/youre-in-big-trouble.mp3",
         keystroke: "b"
     }
-]
-
-// const soundClips = [
-//     {
-//         title: "80 million people",
-//         src: "assets/sounds/80-million-people.mp3",
-//         keystroke: "a"
-//     },
-//     {
-//         title: "are you sure",
-//         src: "assets/sounds/are-you-sure.mp3",
-//         keystroke: "s"
-//     }
-// ];
-
-// let outputButtons = document.querySelector('#button-container')
-// soundClips.forEach((clip) => {
-//     document.querySelector('#button-container').innerHTML += '<div class="button" data-src="' + clip.src + '">' + clip.title + '</div>';
-// })
+];
 
 soundClips.forEach((clip) => {
-    // outputButtons.innerHTML += '<div id="' + clip.title + '" class="button" data-src="' + clip.src + '">' + clip.title + '</div>';
     document.querySelector('#button-container').innerHTML += '<div id="' + clip.title + '" class="button" data-src="' + clip.src + '" data-key="' + clip.keystroke + '">' + clip.title + ' - <span class="keystroke">' + clip.keystroke + '</span></div>';
-
 })
 
 let buttonElements = document.querySelectorAll('.button');
 buttonElements.forEach((title)=>{
     title.addEventListener('click', ()=>{
-        let audioPath = title.getAttribute('data-src')
-        playAudio(audioPath)
+        let audioPath = title.getAttribute('data-src');
+        playAudio(audioPath);
     })
 });
 
@@ -207,11 +187,10 @@ buttonElements.forEach((title)=>{
 document.addEventListener('keydown', (e)=>{
     soundClips.forEach((title)=>{
         if(title.keystroke === e.key) {
-            let audioPath = title.src
-            playAudio(audioPath)
+            let audioPath = title.src;
+            playAudio(audioPath);
         }
     })
-
 })
 
 
@@ -220,18 +199,5 @@ function playAudio(audioPath) {
         '<audio src="' + audioPath +  '"> </audio>';
     return document.querySelector('audio').play();
 }
-
-// function playAudio(audioPath) {
-//     // '<audio controls src="' + audioPath + '"></audio>'
-//
-//     return document.querySelector('#audiobar-container').innerHTML =
-//         '<audio controls src="' + audioPath +  '" </audio>'
-//     document.querySelector('audio').play()
-//
-// }
-
-
-// document.addEventListener('keydown', (e)=>{
-// })
 
 
